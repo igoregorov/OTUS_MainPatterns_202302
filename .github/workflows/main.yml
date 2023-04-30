@@ -43,9 +43,7 @@ jobs:
         with:
           arguments: test
       - name: Test Report
-        uses: dorny/test-reporter@v1
-        if: success() || failure()    # run this step even if previous step failed
+        uses: mikepenz/action-junit-report@v3
+        if: always()
         with:
-          name: JEST Tests            # Name of the check run which will be created
-          path: /home/runner/work/OTUS_MainPatterns_202302/OTUS_MainPatterns_202302/build/test-results/test/TEST-*.xml    # Path to test results
-          reporter: jest-junit        # Format of test results
+          report_paths: '**/build/test-results/test/TEST-*.xml'
