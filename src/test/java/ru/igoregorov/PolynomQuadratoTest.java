@@ -10,7 +10,7 @@ class PolynomQuadratoTest extends DictionaryDatas {
 
     @Test
     void getSolve101() throws IllegalConditions {
-        a = 1D;
+        a = 0D;
         b = 0D;
         c = 1D;
         assertArrayEquals(new Double[]{}, PolynomQuadrato.getSolve(a, b, c));
