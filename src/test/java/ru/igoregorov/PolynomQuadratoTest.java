@@ -1,18 +1,18 @@
 package ru.igoregorov;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.igoregorov.exceptions.IllegalConditions;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-class PolynomQuadratoTest {
+
+class PolynomQuadratoTest extends DictionaryDatas {
 
     @Test
     void getSolve101() throws IllegalConditions {
-        Double a = 0D;
-        Double b = 0D;
-        Double c = 0D;
-        Assertions.assertArrayEquals(PolynomQuadrato.getSolve(a,b,c), new Double[]{});
+        a = 1D;
+        b = 0D;
+        c = 1D;
+        assertArrayEquals(new Double[]{}, PolynomQuadrato.getSolve(a, b, c));
     }
 }
