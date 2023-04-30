@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) throws IllegalConditions {
         try {
-            Double[] solution = PolynomQuadrato.getSolve(0D, -5D, 2D);
+            Double[] solution = PolynomQuadrato.getSolve("1ф", -5D, 2D);
             String solutionCount = null;
             switch (solution.length) {
                 case 0:

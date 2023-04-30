@@ -8,10 +8,10 @@ import static ru.igoregorov.utils.Utils.toDouble;
 
 public class PolynomQuadrato {
 
-    public static Double[] getSolve(Double a, Double b, Double c) throws IllegalConditions {
-        a = toDouble(a);
-        b = toDouble(b);
-        c = toDouble(c);
+    public static<T> Double[] getSolve(T par_a, T par_b, T par_c) throws IllegalConditions {
+        Double a = toDouble(par_a);
+        Double b = toDouble(par_b);
+        Double c = toDouble(par_c);
 
         boolean isZeroA = isZero(a);
         boolean isZeroB = isZero(b);
