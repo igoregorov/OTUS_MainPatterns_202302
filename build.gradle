@@ -20,4 +20,8 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    reports {
+        junitXml.enabled = false
+        html.enabled = true
+    }
 }
