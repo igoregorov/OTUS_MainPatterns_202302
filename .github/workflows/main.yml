@@ -30,6 +30,11 @@ jobs:
 #          arguments: -b build.gradle
 
   test:
+    permissions:
+      contents: read
+      issues: read
+      checks: write
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -46,7 +51,5 @@ jobs:
         uses: mikepenz/action-junit-report@v3
         if: always()
         with:
-          github_token: ${{ secrets.TESTREPORT_TOKEN }}
-          token: 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
           report_paths: '**/build/test-results/test/TEST-*.xml'
 
