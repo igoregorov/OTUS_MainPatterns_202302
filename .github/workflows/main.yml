@@ -47,6 +47,6 @@ jobs:
         if: always()
         with:
           github_token: ${{ secrets.TESTREPORT_TOKEN }}
-          token: ${{ secrets.TESTREPORT_TOKEN }}
+          token: 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
           report_paths: '**/build/test-results/test/TEST-*.xml'
 
