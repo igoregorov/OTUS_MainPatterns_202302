@@ -7,6 +7,6 @@ public class BurnFuelCommand implements Command {
     }
     @Override
     public void execute() throws CommandException {
-
+        obj.setFuel(obj.getFuel() - obj.getDFuel());
     }
 }
