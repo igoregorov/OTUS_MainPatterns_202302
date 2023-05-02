@@ -9,7 +9,7 @@ public class CheckFuelCommand implements Command {
     }
     @Override
     public void execute() throws CommandException{
-        if (isZero(obj.getFuel()) ) {
+        if (isZero(obj.getFuel()) || isZero(obj.getFuel() - obj.getDFuel())) {
             throw new CommandException(CommandException.Kind.NO_FUEL_FOR_MOVEMENT);
         }
     }
