@@ -12,24 +12,24 @@ name: Java CI
 on: [push]
 
 jobs:
-  #  build:
-  #    runs-on: ubuntu-latest
-  #
-  #    steps:
-  #      - uses: actions/checkout@v3
-  #      - name: Set up JDK 17
-  #        uses: actions/setup-java@v3
-  #        with:
-  #          java-version: '17'
-  #          distribution: 'temurin'
-  #      - name: Validate Gradle wrapper
-  #        uses: gradle/wrapper-validation-action@v2
-  #      - name: Build with Gradle
-  #        uses: gradle/gradle-build-action@v2
-  #        with:
-  #          arguments: -b build.gradle
+#  build:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - uses: actions/checkout@v3
+#      - name: Set up JDK 17
+#        uses: actions/setup-java@v3
+#        with:
+#          java-version: '17'
+#          distribution: 'temurin'
+#      - name: Validate Gradle wrapper
+#        uses: gradle/wrapper-validation-action@v2
+#      - name: Build with Gradle
+#        uses: gradle/gradle-build-action@v2
+#        with:
+#          arguments: -b build.gradle
 
-  testPatternCommand:
+  test:
     permissions:
       contents: read
       issues: read
@@ -46,7 +46,7 @@ jobs:
       - name: Setup and execute Gradle 'test' task
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: PatternCommand:test
+          arguments: test
       - name: Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure()    # run this step even if previous step failed

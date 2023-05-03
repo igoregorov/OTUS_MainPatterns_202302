@@ -10,7 +10,8 @@ public class IllegalConditions extends Exception {
     public enum Kind {
         INFINIT_SOLUTION("Бесконечно много решений"),
         NO_SOLUTION("Не имеет решений"),
-        NO_POLYNOM("Это не квадратное уравнение")
+        NO_POLYNOM("Это не квадратное уравнение"),
+        NO_NUMBER_COEF("Не числовой коэффициент"),
         ;
 
         @Getter
