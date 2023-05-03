@@ -6,7 +6,7 @@ import static ru.igoregorov.utils.Utils.isZero;
 import static ru.igoregorov.utils.Utils.toDouble;
 
 
-public class PolynomQuadrato {
+public class HW0101PolynomQuadrato {
 
     public static<T> Double[] getSolve(T par_a, T par_b, T par_c) throws IllegalConditions {
         Double a = toDouble(par_a);

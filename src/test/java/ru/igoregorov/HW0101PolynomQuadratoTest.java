@@ -6,7 +6,7 @@ import ru.igoregorov.exceptions.IllegalConditions;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-class PolynomQuadratoTest extends DictionaryDatas {
+class HW0101PolynomQuadratoTest extends DictionaryDatas {
 
     @Test
     void getSolveEmpty() {
@@ -14,7 +14,7 @@ class PolynomQuadratoTest extends DictionaryDatas {
         b = 0D;
         c = 1D;
         try {
-            assertArrayEquals(new Double[]{}, PolynomQuadrato.getSolve(a, b, c));
+            assertArrayEquals(new Double[]{}, HW0101PolynomQuadrato.getSolve(a, b, c));
         } catch (Exception e) {
             fail();
         }
@@ -26,7 +26,7 @@ class PolynomQuadratoTest extends DictionaryDatas {
         c = -1D;
         sol = new Double[]{-1D, 1D};
         try {
-            assertArrayEquals(sol, PolynomQuadrato.getSolve(a, b, c));
+            assertArrayEquals(sol, HW0101PolynomQuadrato.getSolve(a, b, c));
         } catch (Exception e) {
             fail();
         }
@@ -39,7 +39,7 @@ class PolynomQuadratoTest extends DictionaryDatas {
         c = 1D;
         sol = new Double[]{-1D};
         try {
-            assertArrayEquals(sol, PolynomQuadrato.getSolve(a, b, c));
+            assertArrayEquals(sol, HW0101PolynomQuadrato.getSolve(a, b, c));
         } catch (Exception e) {
             fail();
         }
@@ -51,7 +51,7 @@ class PolynomQuadratoTest extends DictionaryDatas {
         b = 2D;
         c = 1D;
         IllegalConditions exception = assertThrows(IllegalConditions.class,
-                () -> PolynomQuadrato.getSolve(a, b, c));
+                () -> HW0101PolynomQuadrato.getSolve(a, b, c));
         assertEquals(IllegalConditions.Kind.NO_POLYNOM.getDescription(), exception.getMessage());
     }
 
@@ -62,7 +62,7 @@ class PolynomQuadratoTest extends DictionaryDatas {
         c = 1e-9;
         sol = new Double[]{-1e-4};
         try {
-            assertArrayEquals(sol, PolynomQuadrato.getSolve(a, b, c));
+            assertArrayEquals(sol, HW0101PolynomQuadrato.getSolve(a, b, c));
         } catch (Exception e) {
             fail();
         }
@@ -76,7 +76,7 @@ class PolynomQuadratoTest extends DictionaryDatas {
         anyThing = "a";
         sol = new Double[]{-1e-4};
         IllegalConditions exception = assertThrows(IllegalConditions.class,
-                () -> PolynomQuadrato.getSolve(anyThing, b, c));
+                () -> HW0101PolynomQuadrato.getSolve(anyThing, b, c));
         assertEquals(IllegalConditions.Kind.NO_NUMBER_COEF.getDescription(), exception.getMessage());
     }
 }
