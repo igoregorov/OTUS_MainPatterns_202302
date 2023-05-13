@@ -1,6 +1,7 @@
 package ru.igoregorov;
 
 import org.junit.jupiter.api.Test;
+import ru.igoregorov.enums.KindException;
 import ru.igoregorov.exceptions.IllegalConditions;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -52,7 +53,7 @@ class HW0101PolynomQuadratoTest extends DictionaryDatas {
         c = 1D;
         IllegalConditions exception = assertThrows(IllegalConditions.class,
                 () -> HW0101PolynomQuadrato.getSolve(a, b, c));
-        assertEquals(IllegalConditions.Kind.NO_POLYNOM.getDescription(), exception.getMessage());
+        assertEquals(KindException.NO_POLYNOM.getDescription(), exception.getMessage());
     }
 
     @Test
@@ -77,6 +78,6 @@ class HW0101PolynomQuadratoTest extends DictionaryDatas {
         sol = new Double[]{-1e-4};
         IllegalConditions exception = assertThrows(IllegalConditions.class,
                 () -> HW0101PolynomQuadrato.getSolve(anyThing, b, c));
-        assertEquals(IllegalConditions.Kind.NO_NUMBER_COEF.getDescription(), exception.getMessage());
+        assertEquals(KindException.NO_NUMBER_COEF.getDescription(), exception.getMessage());
     }
 }

@@ -1,5 +1,6 @@
 package ru.igoregorov.utils;
 
+import ru.igoregorov.enums.KindException;
 import ru.igoregorov.exceptions.IllegalConditions;
 
 public class Utils {
@@ -11,7 +12,7 @@ public class Utils {
         try {
             return Double.valueOf(obj.toString());
         } catch (NumberFormatException e) {
-            throw new IllegalConditions(IllegalConditions.Kind.NO_NUMBER_COEF);
+            throw new IllegalConditions(KindException.NO_NUMBER_COEF);
         }
     }
     public static <T> boolean isZero(T obj) {
@@ -26,5 +27,10 @@ public class Utils {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public static<T> T nvl(T obj, T def)  {
+        if (obj == null) return def;
+        return obj;
     }
 }

@@ -1,5 +1,6 @@
 package ru.igoregorov;
 
+import ru.igoregorov.enums.KindException;
 import ru.igoregorov.exceptions.IllegalConditions;
 
 import static ru.igoregorov.utils.Utils.isZero;
@@ -16,13 +17,13 @@ public class HW0101PolynomQuadrato {
         boolean isZeroA = isZero(a);
         boolean isZeroB = isZero(b);
         if (isZeroA && isZeroB && isZero(c)) {
-            throw new IllegalConditions(IllegalConditions.Kind.INFINIT_SOLUTION);
+            throw new IllegalConditions(KindException.INFINIT_SOLUTION);
         }
         if (isZeroA && isZeroB) {
-            throw new IllegalConditions(IllegalConditions.Kind.NO_SOLUTION);
+            throw new IllegalConditions(KindException.NO_SOLUTION);
         }
         if (isZeroA) {
-            throw new IllegalConditions(IllegalConditions.Kind.NO_POLYNOM);
+            throw new IllegalConditions(KindException.NO_POLYNOM);
         }
 
         double d = (b*b - 4*a*c);
